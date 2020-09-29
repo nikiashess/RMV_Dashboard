@@ -13,12 +13,12 @@ export default function DepTable({ Title, Data, Color}) {
     justifyContent: 'center',
     backgroundColor: 'rgba(52, 52, 52, 0)',
     borderRadius: 10,
-    border: "3px solid " + (Color == undefined ? '#a93634' : Color),
+    border: "3px solid " + (Color === undefined ? '#a93634' : Color),
     margin: 10,
   }
 
   const HeaderContainer = {
-    backgroundColor: Color == undefined ? '#a93634' : Color,
+    backgroundColor: Color === undefined ? '#a93634' : Color,
     padding: 10,
     fontWeight: 'bold',
     fontSize: 16,
@@ -39,7 +39,7 @@ export default function DepTable({ Title, Data, Color}) {
   }
   const Text3 = {
     fontSize: 10,
-    color: Color == undefined ? '#a93634' : Color
+    color: Color === undefined ? '#a93634' : Color
   }
 
   return (
@@ -51,12 +51,13 @@ export default function DepTable({ Title, Data, Color}) {
         <div>
 
         <div style={BodyContainer}>
-          {Data == undefined ? null : Data.slice(0,6).map(element => {
+          {Data === undefined ? null : Data.slice(0,6).map(element => {
+                      
 
                       return(
 
-                            element.rtTime == undefined ? null : 
-                            <div key={element.index}>
+                            element.rtTime === undefined ? null : 
+                            <div key={element.JourneyDetailRef.ref}>
                                 <span style={Text1}>
                                     {'in ' + moment(element.rtTime, 'HH:mm:ss').diff(moment(), 'minutes') + ' Minuten'}
                                 </span>
@@ -68,7 +69,7 @@ export default function DepTable({ Title, Data, Color}) {
                                     </span>
 
                                     <span style={Text3}>
-                                        {element.time == element.rtTime ? '' : (' +' + moment(element.rtTime, 'HH:mm:ss').diff(moment(element.time, 'HH:mm:ss'), 'minutes'))}
+                                        {element.time === element.rtTime ? '' : (' +' + moment(element.rtTime, 'HH:mm:ss').diff(moment(element.time, 'HH:mm:ss'), 'minutes'))}
                                     </span>
                                 </div>
 
