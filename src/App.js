@@ -9,7 +9,7 @@ function App() {
 
   // API Proxy to prevent CORS error
   //const Proxy = 'https://cors-anywhere.herokuapp.com/'
-  const Proxy = 'https://thingproxy.freeboard.io/fetch/'
+  //const Proxy = 'https://thingproxy.freeboard.io/fetch/'
   // Station ID of Dornbusch / refer to RMV API documentation for different station
   const stationID_dornbusch = '3001301'
   const stationID_hauptfriedhof= '3001401'
@@ -59,10 +59,10 @@ function App() {
     
 
     // run once, then every x seconds
-    axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
+    axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
        .then(response => update(response.data.Departure))
 
-    axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
+    axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
        .then(response => update_Hauptfriedhof(response.data.Departure))
 
     const interval = setInterval(() => {
@@ -70,10 +70,10 @@ function App() {
       setTime(moment().format('HH:mm'))
 
 
-        axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
+        axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
         .then(response => update(response.data.Departure))
 
-        axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
+        axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
         .then(response => update_Hauptfriedhof(response.data.Departure))
 
     }, 20000); 
