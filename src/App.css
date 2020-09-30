@@ -1,10 +1,13 @@
 .App {
-  text-align: center;
+  text-align: start;
+  background-color: #282c34;
+  height: 100%;
+  width: 100%;
 }
 
 
 .App-header {
-  background-color: #282c34;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,13 +17,14 @@
   color: white;
 }
 
+
 .Tables {
   background-color: #282c34;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(5px + 1vmin);
+  font-size: calc(2px + 1vmin);
   color: white;
   
 }
@@ -31,17 +35,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  font-size: calc(5px + 3vmin);
+  font-size: calc(5px + 5vmin);
   color: white;
   text-align: start;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
