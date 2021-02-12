@@ -5,10 +5,11 @@ import apiKeys from './env'
 import DepTable from './DepTable'
 import moment from 'moment';
 
+
 function App() {
 
   // API Proxy to prevent CORS error
-  const Proxy = 'https://cors-anywhere.herokuapp.com/'
+  const Proxy = 'https://rmv-srv.herokuapp.com/'
   //const Proxy = 'https://thingproxy.freeboard.io/fetch/'
   // Station ID of Dornbusch / refer to RMV API documentation for different station
   const stationID_dornbusch = '3001301'
@@ -59,10 +60,10 @@ function App() {
     
     // https://www.rmv.de/hapi/departureBoard?accessId=91adb1c5-21ec-42a1-8d96-a7429e007e03&id=3001301&format=json
     // run once, then every x seconds
-    axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
+    axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
        .then(response => update(response.data.Departure))
 
-    axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
+    axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
        .then(response => update_Hauptfriedhof(response.data.Departure))
 
     const interval = setInterval(() => {
@@ -70,10 +71,10 @@ function App() {
       setTime(moment().format('HH:mm'))
 
 
-        axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
+        axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_dornbusch +'&format=json')
         .then(response => update(response.data.Departure))
 
-        axios.get('https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
+        axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
         .then(response => update_Hauptfriedhof(response.data.Departure))
 
     }, 20000); 
