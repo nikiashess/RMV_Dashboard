@@ -103,8 +103,8 @@ const update = (data) => {
 
   setU8n(data.filter(function(d) { return (d.Product.line === 'U8' && d.direction === u8n_dir) }))
 
-  setB34e(data.filter(function(d) { return (d.Product.line === '34' && d.direction === b34e_dir) }))
-  setB34w(data.filter(function(d) { return (d.Product.line === '34' && d.direction === b34w_dir) }))
+  setB34e(data.filter(function(d) { return (d.Product.line === 'M34' && d.direction === b34e_dir) }))
+  setB34w(data.filter(function(d) { return (d.Product.line === 'M34' && d.direction === b34w_dir) }))
 
 }
 
