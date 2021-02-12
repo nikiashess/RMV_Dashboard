@@ -42,7 +42,7 @@ export default function DepTable({ Title, Data, Color}) {
   }
   const Text1 = {
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 10,
   }
   const Text2 = {
     fontSize: 10,
