@@ -9,7 +9,7 @@ import moment from 'moment';
 function App() {
 
   // API Proxy to prevent CORS error
-  const Proxy = 'https://rmv-srv.herokuapp.com/'
+  const Proxy = 'https://rmv-server.herokuapp.com/'
   // DevMode with empty proxy const Proxy = ''
   // Station ID of Dornbusch / refer to RMV API documentation for different station
   const stationID_dornbusch = '3001301'
