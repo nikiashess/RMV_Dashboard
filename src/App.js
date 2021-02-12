@@ -10,7 +10,7 @@ function App() {
 
   // API Proxy to prevent CORS error
   const Proxy = 'https://rmv-srv.herokuapp.com/'
-  //const Proxy = 'https://thingproxy.freeboard.io/fetch/'
+  // DevMode with empty proxy const Proxy = ''
   // Station ID of Dornbusch / refer to RMV API documentation for different station
   const stationID_dornbusch = '3001301'
   const stationID_hauptfriedhof= '3001401'
