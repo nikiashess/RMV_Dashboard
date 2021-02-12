@@ -111,7 +111,7 @@ export default function DepTable({ Title, Data, Color}) {
         <div>
 
         <div style={BodyContainer}>
-          {Data === undefined ? null : Data.slice(0,6).map(element => {
+          {Data === undefined ? null : Data.slice(0,5).map(element => {
                       
 
                       return(
