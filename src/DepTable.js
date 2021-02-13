@@ -2,9 +2,10 @@ import React from 'react'
 import './App.css';
 import moment from 'moment';
 import Divider from '@material-ui/core/Divider';
+import DirectionsWalkIcon from '@material-ui/icons/DirectionsWalk';
 
 
-export default function DepTable({ Title, Data, Color}) {
+export default function DepTable({ Title, Data, Color, Station, Distance}) {
 
   const colU1 = "#a93634"
   const colU2 = "#49a258"
@@ -14,7 +15,7 @@ export default function DepTable({ Title, Data, Color}) {
   const colRMV = "#49a38d"
 
   const TableContainer = {
-    width: 130, 
+    width: 170, 
     height: 250,
     alignItems: 'center',
     justifyContent: 'center',
@@ -26,9 +27,16 @@ export default function DepTable({ Title, Data, Color}) {
 
   const HeaderContainer = {
     backgroundColor: Color === undefined ? colRMV : Color,
-    padding: 10,
+    padding: 8,
     fontWeight: 'bold',
     fontSize: 16,
+    textAlign: 'center',
+  }
+  const StationContainer = {
+    backgroundColor: Color === undefined ? colRMV : Color,
+    padding: 2,
+    fontWeight: 'bold',
+    fontSize: 11,
     textAlign: 'center',
   }
   const BodyContainer = {
@@ -68,7 +76,7 @@ export default function DepTable({ Title, Data, Color}) {
     <label>
 
       <span style={Text1}>
-        {' in ' + moment(rtTime, 'HH:mm:ss').diff(moment(), 'minutes') + ' Minuten'}
+        {moment(rtTime, 'HH:mm:ss').diff(moment().subtract(1, 'minute'), 'minutes') < 0 ? ' in 0 Minuten' : ' in ' + moment(rtTime, 'HH:mm:ss').diff(moment().subtract(1, 'minute'), 'minutes') + ' Minuten'}
       </span>
       <br />
       <span style={Text2}>
@@ -107,7 +115,14 @@ export default function DepTable({ Title, Data, Color}) {
     <div style={TableContainer}>
         <div style={HeaderContainer}>
             {Title}
+            
         </div>
+        <div style={StationContainer}>
+          {Station}
+          <DirectionsWalkIcon style={{ fontSize: 13 }} color="white" />
+          {Distance}
+        </div>
+        
         <div>
 
         <div style={BodyContainer}>
