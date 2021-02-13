@@ -124,22 +124,22 @@ const update_Hauptfriedhof = (data) => {
     <div className="App">
       <header className="App-header">
 
-        <div className="Time">
+        {/* <div className="Time">
           {Time}
-        </div>
+        </div> */}
 
         <div className="Tables">
-          <DepTable Title={'Südbahnhof'} Data={u1238s} key={'1'}/>
-          <DepTable Title={'Ginnheim'} Data={u1n} Color={colU1} key={'2'}/>
-          <DepTable Title={'Gonzenheim'} Data={u2n} Color={colU2} key={'3'}/>
-          <DepTable Title={'Hohe Mark'} Data={u3n} Color={colU3} key={'4'}/>
-          <DepTable Title={'Riedberg'} Data={u8n} Color={colU8} key={'5'}/>
+          <DepTable Title={'Südbahnhof'} Data={u1238s} Station={'Dornbusch U '} Distance={'5min'} key={'1'}/>
+          <DepTable Title={'Ginnheim'} Data={u1n} Color={colU1} Station={'Dornbusch U '} Distance={'5min'} key={'2'}/>
+          <DepTable Title={'Gonzenheim'} Data={u2n} Color={colU2} Station={'Dornbusch U '} Distance={'5min'} key={'3'}/>
+          <DepTable Title={'Hohe Mark'} Data={u3n} Color={colU3} Station={'Dornbusch U '} Distance={'5min'} key={'4'}/>
+          <DepTable Title={'Riedberg'} Data={u8n} Color={colU8} Station={'Dornbusch U '} Distance={'5min'} key={'5'}/>
         </div>
         <div className="Tables">     
-          <DepTable Title={'Rödelheim'} Data={b34w} Color={colB34} key={'6'}/>
-          <DepTable Title={'Bornheim'} Data={b34e} Color={colB34} key={'7'}/>
-          <DepTable Title={'Hauptbahnhof'} Data={u5s} Color={colU5} key={'8'}/>
-          <DepTable Title={'Preungesheim'} Data={u5n} Color={colU5} key={'9'}/>
+          <DepTable Title={'Rödelheim'} Data={b34w} Color={colB34} Station={'Dornbusch Bus '} Distance={'7min'} key={'6'}/>
+          <DepTable Title={'Bornheim'} Data={b34e} Color={colB34} Station={'Dornbusch Bus '} Distance={'9min'} key={'7'}/>
+          <DepTable Title={'Hauptbahnhof'} Data={u5s} Color={colU5} Station={'Hauptfriedhof U '} Distance={'13min'} key={'8'}/>
+          <DepTable Title={'Preungesheim'} Data={u5n} Color={colU5} Station={'Hauptfriedhof U '} Distance={'13min'} key={'9'}/>
         </div>
 
         
