@@ -77,7 +77,7 @@ function App() {
         axios.get(Proxy + 'https://www.rmv.de/hapi/departureBoard?accessId='+ apiKeys.rmvApiKey +'&id='+ stationID_hauptfriedhof +'&format=json')
         .then(response => update_Hauptfriedhof(response.data.Departure))
 
-    }, 20000); 
+    }, 100000); 
     
         
 
